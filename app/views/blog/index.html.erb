@@ -1,0 +1,6 @@
+<h1>All Blogs Here</h1>
+<ul>
+<% @blogs.each do |blog| %>
+<li><%= link_to blog.title %></li>
+<% end %>
+</ul>
