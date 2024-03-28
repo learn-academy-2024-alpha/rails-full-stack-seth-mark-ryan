@@ -1,12 +1,21 @@
+
 <h1>All Blogs Here</h1>
 
+
 <% if @blogs.any? %>
-    <ul>
-        <% @blogs.each do |blog| %>
-            <li><%= link_to blog.title, blog_path(blog) %></li>
-        <% end %>
-    </ul>
+  <div class="card-container">
+    <% @blogs.each do |blog| %>
+      <div class="card">
+        <h3><%= link_to blog.title, blog_path(blog) %></h3>
+        <p class="content"><%= blog.content %></p>
+      </div>
+    <% end %>
+  </div>
 <% else %>
-    <p>No blog posts available.</p>
+  <p>No blog posts available.</p>
 <% end %>
+
+
+<div class = "create">
 <p><%= link_to 'Create a new blog post', blog_new_path %></p>
+</div>

@@ -1,5 +1,6 @@
 <h1> Edit Blog Post </h1>
 
+<div class = post-container>
 <%= form_with(model: @blog, remote: true) do |form| %>
     <%= form.label :title, 'Enter a title for your blog'%>
     <br />
@@ -8,11 +9,12 @@
   <br />
     <%= form.label :content, 'Enter your blog'%>
     <br />
-    <%= form.text_area :content %>
+    <%= form.text_area :content,size:"60x10" %>
   <br />
   <br />
     <%= form.submit 'Update Blog Post' %>
   <% end %>
+</div>
 
   <%= link_to 'Back', blogs_path %>
     

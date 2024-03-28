@@ -1,13 +1,14 @@
 <%= form_with(model: @blog, remote: true) do |form| %>
-    <%= form.label :title, 'Enter a title for your blog'%>
+    <%= form.label :title, 'Enter a title'%>
     <br />
     <%= form.text_field :title %>
   <br />
   <br />
     <%= form.label :content, 'Enter your blog'%>
     <br />
-    <%= form.text_area :content %>
+    <%= form.text_area :content, size:"60x10"%>
   <br />
   <br />
     <%= form.submit 'Create Blog Post' %>
   <% end %>
+  
