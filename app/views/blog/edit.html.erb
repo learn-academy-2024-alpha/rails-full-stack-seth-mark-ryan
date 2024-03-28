@@ -1,0 +1,20 @@
+<h1> Edit Blog Post </h1>
+
+<%= form_with(model: @blog, remote: true) do |form| %>
+    <%= form.label :title, 'Enter a title for your blog'%>
+    <br />
+    <%= form.text_field :title %>
+  <br />
+  <br />
+    <%= form.label :content, 'Enter your blog'%>
+    <br />
+    <%= form.text_area :content %>
+  <br />
+  <br />
+    <%= form.submit 'Update Blog Post' %>
+  <% end %>
+
+  <%= link_to 'Back', blogs_path %>
+    
+
+   
