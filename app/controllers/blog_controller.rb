@@ -13,8 +13,10 @@ class BlogController < ApplicationController
 
     def create
         @blog = Blog.create(blog_params)
-        if @blog.valid?
+        if @blog.save
             redirect_to blogs_path
+        else
+            render :new
         end
     end
 
