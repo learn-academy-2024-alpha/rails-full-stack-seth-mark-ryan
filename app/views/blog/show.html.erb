@@ -1,11 +1,15 @@
 <h1>Blog posts</h1>
 
-<p>Blog Title: <%= @blog.title %></p>
-<p>Blog Content: <%= @blog.content %></p>
 
+<p class = "show"><%= @blog.title %></p>
+<div class = "content-card">
+<p><%= @blog.content %></p>
+</div>
 
+<div class = "links">
 <p><%= link_to 'Home', blogs_path %> </p>
 <br />
 <p><%= link_to 'edit post', edit_blog_path(@blog) %></p>
 <br />
 <p><%= link_to 'delete post', delete_blog_path(@blog), data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete #{@blog.title}?"} %></p>
+</div>
