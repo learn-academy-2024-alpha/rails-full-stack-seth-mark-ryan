@@ -1,7 +1,12 @@
 <h1>All Blogs Here</h1>
-<ul>
-<% @blogs.each do |blog| %>
-<li><%= link_to blog.title, blog_path(blog) %></li>
+
+<% if @blogs.any? %>
+    <ul>
+        <% @blogs.each do |blog| %>
+            <li><%= link_to blog.title, blog_path(blog) %></li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>No blog posts available.</p>
 <% end %>
-</ul>
 <p><%= link_to 'Create a new blog post', blog_new_path %></p>
